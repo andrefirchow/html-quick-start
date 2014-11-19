@@ -1,0 +1,136 @@
+@charset "UTF-8";
+
+/**
+ * The default CSS styling to start developing
+ * within a minute
+ *
+ * by Andre Firchow (http://firchow.net/)
+ *
+ */
+
+
+$primary-color: #CD5C5C;
+$body-bg: #f5f5f5;
+$body-text-color: #5A5A5A;
+$heading-text-color: $primary-color;
+$link-color: #4682B4;
+
+
+@import "vendor/normalize";
+
+$fa-font-path: "../fonts/font-awesome";
+@import "vendor/font-awesome/font-awesome";
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+
+
+
+
+* {
+    &,
+    &:before,
+    &:after {
+        box-sizing: border-box;
+    }
+}
+
+html,
+body { font-size: 100% }
+
+body {
+    background: $body-bg;
+    color: $body-text-color;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    position: relative;
+}
+
+a {
+    color: $link-color;
+    -o-transition: color .25s ease-in-out;
+    -moz-transition: color .25s ease-in-out;
+    -webkit-transition: color .25s ease-in-out;
+    transition: color .25s ease-in-out;
+
+    &:hover {
+        color: darken($link-color, 20%);
+    }
+
+}
+
+hr {
+    background-color: darken($body-bg, 15%);
+    border: 0;
+    height: 1px;
+    margin: 50px 0;
+}
+
+.wrapper {
+    margin: 5% auto;
+    padding: 0 5%;
+    max-width: 1200px;
+}
+
+.page-footer {
+    border-top: 1px solid darken($body-bg, 15%);
+    margin: 50px 0 20px 0;
+    padding-top: 30px;
+}
+
+.mute {
+    opacity: .6;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 2px;
+    background: $link-color;
+    color: #fff !important;
+    text-decoration: none;
+    margin: 10px;
+    margin-left: 0;
+
+    &.primary {
+        background: $primary-color;
+    }
+
+    &:hover {
+        opacity: .8;
+    }
+
+}
+
+h1, h2, h3 {
+    font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $heading-text-color;
+
+    small {
+        color: lighten($heading-text-color,15%);
+    }
+
+}
+
+code {
+    display: inline-block;
+    color: $primary-color;
+    background: darken($body-bg, 5%);
+    border-radius: 2px;
+    padding: 0 5px;
+}
+
+
+.clearfix {
+    &:after {
+        content:"";
+        display:table;
+        clear:both;
+    }
+}
